@@ -6,9 +6,17 @@ relevant section of `bashrc_template` before proposing commands or edits.
 
 ## Shared agent context
 
-- For repository-specific agent setup and Harness²-inspired practices, read
-  [`docs/improved-google-harness.md`](docs/improved-google-harness.md) and the
-  [`google-harness2` skill](.agents/skills/google-harness2/SKILL.md).
+- The two repository skills are [Planning](.agents/skills/planning/SKILL.md)
+  (read-only discovery and plan) and [Acting](.agents/skills/acting/SKILL.md)
+  (authorized implementation and validation). Use the phase-appropriate skill;
+  both incorporate the repository's Harness² and shell-safety guidance.
+- For additional Harness² context and repository setup rationale, read
+  [`docs/improved-google-harness.md`](docs/improved-google-harness.md).
+- Before configuring MCP integrations, read [`docs/mcp-setup.md`](docs/mcp-setup.md)
+  and treat [`.cline/mcp.json`](.cline/mcp.json) as a credential-free Cline
+  project template, not proof that servers are connected or authenticated.
+- The repository pre-commit hook scans staged additions for common secrets and
+  personal-data patterns; see [`docs/commit-safety.md`](docs/commit-safety.md).
 - `AGENTS.md` and `docs/` contain shareable project guidance. Keep private
   session transcripts, user data, and credentials out of version control.
 - Use an AI tool's own memory/session features only as that tool documents

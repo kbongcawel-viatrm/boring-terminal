@@ -24,7 +24,7 @@ benchmarks or automated recursion mechanisms run here.
 | Context | Recommended home | Guidance |
 |---|---|---|
 | Always-on repository rules | [`AGENTS.md`](../AGENTS.md) | Keep concise: project identity, safety boundaries, and links to deeper material. |
-| Reusable task workflow | [`.agents/skills/google-harness2/SKILL.md`](../.agents/skills/google-harness2/SKILL.md) | Load when configuring agent harnesses or doing related repository work. |
+| Reusable task workflow | [Planning](../.agents/skills/planning/SKILL.md) and [Acting](../.agents/skills/acting/SKILL.md) | Use Planning for read-only discovery and proposals; use Acting for authorized implementation and validation. |
 | Durable project knowledge | `docs/` | Store reviewed, non-sensitive facts useful across contributors and tools. |
 | Session history | AI tool's session feature | Keep task-specific and tool-managed; do not commit transcripts by default. |
 | Personal memory | AI tool's private memory feature | Do not treat as shared project truth; promote only verified, safe general facts. |
@@ -72,6 +72,9 @@ harnessing-level reflection concepts, not an automated grading system.
   change Podman trust, or start/modify containers as part of agent onboarding.
 - Preserve pre-existing work in the working tree; inspect status and diffs
   before editing.
+- Use the repository pre-commit scan as a guardrail, not proof that staged
+  content is safe; manually review for personal data the scanner cannot
+  reliably recognize. See [`docs/commit-safety.md`](commit-safety.md).
 
 ## Expected benefits here
 
