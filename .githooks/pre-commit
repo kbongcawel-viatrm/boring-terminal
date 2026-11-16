@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -u
+
+repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+    printf 'pre-commit: cannot determine repository root.\n' >&2
+    exit 1
+}
+
+exec python3 "$repo_root/scripts/pre-commit-sensitive-scan.py"
