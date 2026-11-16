@@ -24,6 +24,20 @@ configure tools, or apply the plan during this phase.
 5. Check project conventions and available validation commands before proposing
    implementation details.
 
+## 1a. Find missing domain guidance
+
+- If a task falls outside the installed skill set, search online for authoritative
+  documentation and relevant installable skills before finalizing the plan. Prefer
+  primary documentation and reputable skill sources; verify provenance, scope,
+  permissions, and side effects rather than trusting search snippets.
+- During Planning, discovery is read-only: report useful references or candidate
+  skills and include any proposed installation in the handoff plan. Do not install
+  skills, tools, or dependencies in this phase.
+- During Acting, install a discovered skill only when the user has authorized that
+  installation. Review its source and requested permissions first, use the
+  narrowest installation scope, and validate what was installed. Otherwise, use
+  the references to proceed without installing and ask if installation is needed.
+
 Use absolute paths when referring to repository files in plans and reports.
 
 ## 2. Define the task

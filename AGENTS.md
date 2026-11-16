@@ -26,6 +26,17 @@ relevant section of `bashrc_template` before proposing commands or edits.
   code. Keep credentials out of the repository, review permissions and side
   effects, and get explicit confirmation before consequential writes or
   destructive operations.
+- If a task is not covered by an available skill, search public skill sources
+  for a relevant skill and review its provenance, scope, permissions, and side
+  effects. During Planning, discovery is read-only: identify candidates but do
+  not install them. During Acting, install a suitable skill only when authorized
+  and after review, using the narrowest scope. If none is suitable or installation
+  is not authorized, consult and cite the topic's official documentation.
+- When blocked, continue investigating with the phase-appropriate skills and
+  available MCP tools (including Firecrawl), then public web search as needed.
+  Stop only when the blocker exceeds available tools, access, authorization, or
+  other actual capability limits; do not bypass the safety and approval rules
+  above to make progress.
 
 ## Shell safety
 
