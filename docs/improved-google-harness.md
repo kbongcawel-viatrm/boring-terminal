@@ -37,6 +37,49 @@ and the skill use a portable convention, but actual discovery and MCP/plugin
 support depend on the specific client and its configuration. Confirm behavior in
 each tool instead of assuming one setup configures all tools.
 
+## `ai-stack`-inspired repository setup
+
+The sibling `/var/home/kim/workspace/ai-stack` is a reference for organizing
+agent context; it is not a runtime dependency. Keep this repository deliberately
+small and share only project-relevant, non-sensitive material:
+
+- **Skills:** the two canonical portable playbooks live in
+  `.agents/skills/planning/SKILL.md` and `.agents/skills/acting/SKILL.md`.
+  Together they document safe use of existing shell helpers; neither installs
+  nor sources the template.
+- **Memory:** use `docs/` for reviewed facts about this project. Do not commit
+  personal memory, raw transcripts, or session-specific data.
+- **Sessions:** use the AI client's private session/handoff feature. Do not
+  import `ai-stack` session files or make a repository transcript archive.
+- **MCP:** the Cline project endpoint template is [`.cline/mcp.json`](../.cline/mcp.json);
+  setup and safety instructions are in [`docs/mcp-setup.md`](mcp-setup.md).
+  This template does not configure other clients or complete authentication.
+- **Plugins/hooks:** none are enabled by this repository setup. Add one only
+  when intentionally adopted, after reviewing its trigger, permissions,
+  dependencies, and side effects. Keep consequential actions opt-in.
+
+Do not copy `ai-stack`'s client endpoint files, provider configuration, private
+sessions, or broad skill catalog wholesale. Revisit integrations only for a
+specific client and use that client's documented configuration and auth flow.
+
+## Existing shell shortcuts for task resolution
+
+`bashrc_template` defines `kimctl` to dispatch a function in the current shell;
+the README demonstrates `kimctl getpath` and `kimctl getbash`. `getbash` runs
+`bash -n` against the active `~/.bashrc`, and `getpath` checks PATH entries.
+These are existing inspection/dispatch helpers, not an AI agent, task planner,
+or session/memory integration. Treat `kimctl` as arbitrary function execution:
+inspect the function first, pass only a command you intend to run, and do not
+assume it is safer than calling that function directly. In particular, do not
+use `kimctl` to test provisioning, Podman, trust, or other state-changing tasks.
+
+The checked-in `ai-stack` skills include a general `bash-scripting` workflow.
+This repository's [Planning](../.agents/skills/planning/SKILL.md) and
+[Acting](../.agents/skills/acting/SKILL.md) skills incorporate the relevant
+`.bashrc` task-resolution guidance. They document existing helpers; they do not
+change shell behavior or claim that either skill is automatically loaded by every
+client.
+
 ## Recommended workflow
 
 1. **Orient:** read `AGENTS.md`, the README, and the relevant shell-function
